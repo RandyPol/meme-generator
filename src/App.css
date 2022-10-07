@@ -1,0 +1,33 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  padding: 10px;
+}
+
+.nav--logo {
+  width: 32px;
+}
+
+.nav--logo-name {
+  margin: 0 auto 0 10px;
+  width: 140.79px;
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: 20.7482px;
+  letter-spacing: -0.1em;
+  color: #ffffff;
+}
+
+.nav--project3 {
+  width: 189px;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 12px;
+  text-align: right;
+  margin-right: 80px;
+
+  color: #ffffff;
+}
