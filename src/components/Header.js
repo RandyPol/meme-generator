@@ -1,5 +1,5 @@
 import React from 'react'
-const logoIcon = require('../images/TrollFace.png')
+const logoIcon = require('../images/troll-face.png')
 const Header = () => {
   return (
     <header className="nav-container">
