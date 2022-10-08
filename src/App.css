@@ -1,7 +1,7 @@
 .nav-container {
   display: flex;
   align-items: center;
-  width: 100vw;
+  /* width: 100vw; */
   height: 65px;
   background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   padding: 20px;
@@ -9,8 +9,8 @@
 }
 
 .nav--logo {
-    height: 60%;
-    margin-right: 6px;
+  height: 60%;
+  margin-right: 6px;
 }
 
 .nav--logo-name {
@@ -26,7 +26,47 @@
   width: 189px;
   font-family: 'Inter';
   font-weight: 500;
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-align: right;
   margin-right: 80px;
+}
+
+/* Meme */
+main {
+  padding: 36px;
+  background-color: aqua;
+}
+/* Form */
+.meme-form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+  justify-items: center;
+}
+
+.meme-input {
+  width: 230px;
+  height: 35px;
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #0d0d0d;
+  border: 1px solid #d5d4d8;
+  border-radius: 5px;
+  text-indent: 5px;
+}
+
+.meme-button {
+  grid-column: 1/-1;
+  height: 40px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  border-radius: 5px;
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.1em;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  cursor: pointer;
 }
