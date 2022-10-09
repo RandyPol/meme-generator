@@ -2,17 +2,23 @@ import React from 'react'
 import memesData from '../data/memesData'
 
 const Meme = () => {
-  const [memeImage, setMemeImage] = React.useState('')
-  const memesArray = memesData.data.memes
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData.data.memes)
+  const [meme, setMeme] = React.useState({
+    topText: 'Top text',
+    bottomText: 'Bottom text',
+    randomImage: 'https://i.imgflip.com/30b1gx.jpg',
+  })
 
-  const getNewImage = () => {
-    const numOfMemes = () =>
-      memesArray[Math.floor(Math.random() * memesArray.length)].url
+  const getMeme = () => {
+    const numOfMemes =
+      allMemeImages[Math.floor(Math.random() * allMemeImages.length)].url
 
-    setMemeImage(numOfMemes)
+    setMeme((prev) => ({
+      ...prev,
+      randomImage: numOfMemes,
+    }))
   }
 
-  
   return (
     <main>
       <div className="meme-form">
@@ -30,12 +36,13 @@ const Meme = () => {
           placeholder="Bottom Text"
           required
         />
-        <button className="meme-button" type="submit" onClick={getNewImage}>
+        <button className="meme-button" type="submit" onClick={getMeme}>
           Get a new meme image 🖼
         </button>
       </div>
-
-      <img src={memeImage} alt="newImage" className="meme-img" />
+      <p>{meme.topText}</p>
+      <img src={meme.randomImage} alt="newImage" className="meme-img" />
+      <p>{meme.bottomText}</p>
     </main>
   )
 }
