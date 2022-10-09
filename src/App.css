@@ -70,3 +70,9 @@ main {
   width: 100%;
   cursor: pointer;
 }
+
+
+.meme-img{
+  width: 100%;
+  border-radius: 2px;
+}
