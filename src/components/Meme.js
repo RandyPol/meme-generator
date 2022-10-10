@@ -20,7 +20,7 @@ const Meme = () => {
       [name]: value,
     }))
   }
-console.log(meme)
+  
   const submitHandle = (e) => {
     e.preventDefault()
   }
@@ -48,9 +48,11 @@ console.log(meme)
           Get a new meme image 🖼
         </button>
       </form>
-      <p>{meme.topText}</p>
-      <img src={meme.randomImage} alt="newImage" className="meme-img" />
-      <p>{meme.bottomText}</p>
+      <div className="memeContainer">
+        <img src={meme.randomImage} alt="newImage" className="meme-img" />
+        <p className="meme-text top">{meme.topText}</p>
+        <p className="meme-text bottom">{meme.bottomText}</p>
+      </div>
     </main>
   )
 }
