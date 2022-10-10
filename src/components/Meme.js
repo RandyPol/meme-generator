@@ -9,18 +9,23 @@ const Meme = () => {
     randomImage: 'https://i.imgflip.com/30b1gx.jpg',
   })
 
-  const getMeme = (e) => {
+  const getMeme = () => {
     const numOfMemes =
       allMemeImages[Math.floor(Math.random() * allMemeImages.length)].url
-    const { name, value, type } = e.target
-
     setMeme((prev) => ({
       ...prev,
-      randomImage: type === 'submit' ? numOfMemes : prev.randomImage,
+      randomImage: numOfMemes,
+    }))
+  }
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target
+    setMeme((prev) => ({
+      ...prev,
       [name]: value,
     }))
   }
-  
+
   const submitHandle = (e) => {
     e.preventDefault()
   }
@@ -34,7 +39,7 @@ const Meme = () => {
           name="topText"
           placeholder="Top Text"
           value={meme.topText}
-          onChange={getMeme}
+          onChange={handleOnChange}
         />
         <input
           className="meme-input"
@@ -42,7 +47,7 @@ const Meme = () => {
           name="bottomText"
           placeholder="Bottom Text"
           value={meme.bottomText}
-          onChange={getMeme}
+          onChange={handleOnChange}
         />
         <button className="meme-button" type="submit" onClick={getMeme}>
           Get a new meme image 🖼
