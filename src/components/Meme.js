@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Meme = () => {
-  const [allMemeImages, setAllMemeImages] = React.useState({})
+  const [allMemeImages, setAllMemeImages] = React.useState([])
   const [meme, setMeme] = React.useState({
     topText: '',
     bottomText: '',
