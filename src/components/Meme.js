@@ -9,11 +9,13 @@ const Meme = () => {
   })
 
   React.useEffect(() => {
-    fetch('https://api.imgflip.com/get_memes')
-      .then((data) => data.json())
-      .then((response) => {
-        setAllMemeImages(response.data.memes)
-      })
+    const memeAsync = async () => {
+      const response = await fetch('https://api.imgflip.com/get_memes')
+      const data = await response.json()
+      setAllMemeImages(data.data.memes)
+    }
+
+    memeAsync()
   }, [])
 
   const getMeme = () => {
