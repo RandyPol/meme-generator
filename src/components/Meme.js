@@ -1,13 +1,20 @@
 import React from 'react'
-import memesData from '../data/memesData'
 
 const Meme = () => {
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData.data.memes)
+  const [allMemeImages, setAllMemeImages] = React.useState({})
   const [meme, setMeme] = React.useState({
     topText: '',
     bottomText: '',
     randomImage: 'https://i.imgflip.com/30b1gx.jpg',
   })
+
+  React.useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+      .then((data) => data.json())
+      .then((response) => {
+        setAllMemeImages(response.data.memes)
+      })
+  }, [])
 
   const getMeme = () => {
     const numOfMemes =
